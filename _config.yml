@@ -1,0 +1,10 @@
+title: Blog do Nathan
+email: seu-email@exemplo.com
+description: "Meu espaço para escrever sobre tecnologia e código."
+baseurl: ""
+url: "https://nathanafacion.github.io"
+
+# Configurações de Build
+theme: minima
+plugins:
+  - jekyll-feed
