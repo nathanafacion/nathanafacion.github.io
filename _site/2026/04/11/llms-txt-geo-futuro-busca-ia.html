@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    {% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-    {% if page.image %}<meta property="og:image" content="{{ site.url }}{{ page.image }}">{% endif %}
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <title>Do robots.txt ao llms.txt: Como Preparar Seu Site Para a Era da IA com GEO — Nathana Facion</title>
+    <meta name="description" content="Entenda o novo padrão llms.txt proposto por Jeremy Howard, como funciona o GEO (Generative Engine Optimization) e por que otimizar seu conteúdo para LLMs é tão importante quanto SEO. Guia prático com exemplos reais.">
+    <meta property="og:description" content="Entenda o novo padrão llms.txt proposto por Jeremy Howard, como funciona o GEO (Generative Engine Optimization) e por que otimizar seu conteúdo para LLMs é tão importante quanto SEO. Guia prático com exemplos reais.">
+    <meta property="og:title" content="Do robots.txt ao llms.txt: Como Preparar Seu Site Para a Era da IA com GEO">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="http://localhost:4000/public/images/banner-llms-txt-geo.svg">
+    <meta property="og:url" content="http://localhost:4000/2026/04/11/llms-txt-geo-futuro-busca-ia.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -787,26 +787,470 @@
             <div class="sidebar-divider"></div>
 
             <div class="tags" style="justify-content: center;">
-                {% assign all_tags = "" | split: "" %}
-                {% for post in site.posts %}
-                    {% for tag in post.tags %}
-                        {% unless all_tags contains tag %}
-                            {% assign all_tags = all_tags | push: tag %}
-                        {% endunless %}
-                    {% endfor %}
-                {% endfor %}
-                {% for tag in all_tags %}
-                <a class="tag" href="/tags#{{ tag }}">{{ tag }}</a>
-                {% endfor %}
+                
+                
+                
+                <a class="tag" href="/tags#llms-txt">llms-txt</a>
+                
+                <a class="tag" href="/tags#geo">geo</a>
+                
+                <a class="tag" href="/tags#seo">seo</a>
+                
+                <a class="tag" href="/tags#ia">ia</a>
+                
+                <a class="tag" href="/tags#llm">llm</a>
+                
+                <a class="tag" href="/tags#robots-txt">robots-txt</a>
+                
+                <a class="tag" href="/tags#web">web</a>
+                
+                <a class="tag" href="/tags#otimizacao">otimizacao</a>
+                
+                <a class="tag" href="/tags#generative-engine-optimization">generative-engine-optimization</a>
+                
+                <a class="tag" href="/tags#markdown">markdown</a>
+                
+                <a class="tag" href="/tags#rag">rag</a>
+                
+                <a class="tag" href="/tags#neo4j">neo4j</a>
+                
+                <a class="tag" href="/tags#nextjs">nextjs</a>
+                
+                <a class="tag" href="/tags#embeddings">embeddings</a>
+                
+                <a class="tag" href="/tags#typescript">typescript</a>
+                
+                <a class="tag" href="/tags#openrouter">openrouter</a>
+                
+                <a class="tag" href="/tags#docker">docker</a>
+                
+                <a class="tag" href="/tags#busca-vetorial">busca-vetorial</a>
+                
             </div>
         </aside>
 
         <!-- Main -->
         <main class="main">
-            {{ content }}
+            <div class="post-header">
+    
+    <img src="/public/images/banner-llms-txt-geo.svg" alt="Do robots.txt ao llms.txt: Como Preparar Seu Site Para a Era da IA com GEO" class="post-banner">
+    
+    <h1>Do robots.txt ao llms.txt: Como Preparar Seu Site Para a Era da IA com GEO</h1>
+    <p class="post-meta">11 de April de 2026</p>
+    
+    <div class="tags">
+        
+        <a class="tag" href="/tags#llms-txt">llms-txt</a>
+        
+        <a class="tag" href="/tags#geo">geo</a>
+        
+        <a class="tag" href="/tags#seo">seo</a>
+        
+        <a class="tag" href="/tags#ia">ia</a>
+        
+        <a class="tag" href="/tags#llm">llm</a>
+        
+        <a class="tag" href="/tags#robots-txt">robots-txt</a>
+        
+        <a class="tag" href="/tags#web">web</a>
+        
+        <a class="tag" href="/tags#otimizacao">otimizacao</a>
+        
+        <a class="tag" href="/tags#generative-engine-optimization">generative-engine-optimization</a>
+        
+        <a class="tag" href="/tags#markdown">markdown</a>
+        
+    </div>
+    
+</div>
+
+<div class="post-body">
+    <h2 id="a-web-está-mudando--e-as-máquinas-também">A web está mudando — e as máquinas também</h2>
+
+<p>Se nos anos 90 criamos o <code class="language-plaintext highlighter-rouge">robots.txt</code> para dizer aos buscadores o que podiam acessar, agora estamos vendo nascer algo novo: o <strong>llms.txt</strong>. A iniciativa, documentada em <a href="https://llmstxt.org/">llmstxt.org</a>, propõe algo brilhante pela simplicidade — <strong>um arquivo Markdown na raiz do seu site que ajuda Large Language Models a entenderem quem você é e o que oferece</strong>.</p>
+
+<p>E junto com ele surge um novo conceito: <strong>GEO (Generative Engine Optimization)</strong> — a otimização de conteúdo não mais apenas para motores de busca tradicionais, mas para <strong>engines generativas</strong> como ChatGPT, Perplexity, Claude e Gemini.</p>
+
+<p>Neste post, vamos explorar em detalhes:</p>
+
+<ol>
+  <li>A evolução: <code class="language-plaintext highlighter-rouge">robots.txt</code> → <code class="language-plaintext highlighter-rouge">sitemap.xml</code> → <code class="language-plaintext highlighter-rouge">llms.txt</code></li>
+  <li>A especificação oficial do llms.txt</li>
+  <li>O que é GEO e por que você precisa se importar</li>
+  <li>Como criar seu próprio llms.txt — com exemplo prático</li>
+  <li>O ecossistema e ferramentas disponíveis</li>
+</ol>
+
+<hr />
+
+<h2 id="1-a-linha-do-tempo-de-robôs-a-llms">1. A Linha do Tempo: De Robôs a LLMs</h2>
+
+<h3 id="-1994--robotstxt">🤖 1994 — robots.txt</h3>
+
+<p>O <code class="language-plaintext highlighter-rouge">robots.txt</code> foi criado como um protocolo simples para dizer aos crawlers de busca: “pode acessar isso, mas não aquilo”. É um arquivo de <strong>controle de acesso</strong> — ele não descreve conteúdo, apenas define permissões.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
+Disallow: /admin/
+Allow: /
+</code></pre></div></div>
+
+<h3 id="️-2005--sitemapxml">🗺️ 2005 — sitemap.xml</h3>
+
+<p>O <code class="language-plaintext highlighter-rouge">sitemap.xml</code> complementou o robots.txt ao fornecer uma <strong>lista estruturada de todas as páginas indexáveis</strong> do site. Ajuda buscadores a descobrir conteúdo, mas ainda é voltado para crawlers que vão processar HTML completo.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;urlset</span> <span class="na">xmlns=</span><span class="s">"http://www.sitemaps.org/schemas/sitemap/0.9"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>https://exemplo.com/sobre<span class="nt">&lt;/loc&gt;</span>
+    <span class="nt">&lt;lastmod&gt;</span>2025-01-15<span class="nt">&lt;/lastmod&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/urlset&gt;</span>
+</code></pre></div></div>
+
+<h3 id="-2024--llmstxt">📄 2024 — llms.txt</h3>
+
+<p><strong>Jeremy Howard</strong> (criador do fast.ai e uma das mentes por trás do ULMFiT) publicou em <strong>3 de setembro de 2024</strong> a proposta do <code class="language-plaintext highlighter-rouge">llms.txt</code>. O problema que ele identificou:</p>
+
+<blockquote>
+  <p><strong>LLMs têm janelas de contexto limitadas.</strong> Mesmo os maiores modelos não conseguem processar um site inteiro. E converter HTML para texto limpo é trabalhoso, impreciso e desperdiça tokens preciosos com navegação, ads e boilerplate.</p>
+</blockquote>
+
+<p>A solução? Um arquivo <strong>curado manualmente</strong>, em <strong>Markdown puro</strong>, que fornece ao LLM exatamente o que ele precisa saber — <strong>sem ruído</strong>.</p>
+
+<hr />
+
+<h2 id="2-a-especificação-do-llmstxt">2. A Especificação do llms.txt</h2>
+
+<p>O formato é surpreendentemente simples. Um arquivo <code class="language-plaintext highlighter-rouge">llms.txt</code> na raiz do seu site com a seguinte estrutura:</p>
+
+<h3 id="estrutura-obrigatória">Estrutura Obrigatória</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Nome do Projeto</span>
+<span class="gt">
+&gt; Resumo em uma frase do que é o projeto ou site.</span>
+
+Parágrafos opcionais de contexto adicional.
+
+<span class="gu">## Seção Principal</span>
+<span class="p">
+-</span> <span class="p">[</span><span class="nv">Título do Documento</span><span class="p">](</span><span class="sx">https://exemplo.com/doc1.md</span><span class="p">)</span>: Breve descrição
+<span class="p">-</span> <span class="p">[</span><span class="nv">Outro Documento</span><span class="p">](</span><span class="sx">https://exemplo.com/doc2.md</span><span class="p">)</span>: Outra descrição
+
+<span class="gu">## Optional</span>
+<span class="p">
+-</span> <span class="p">[</span><span class="nv">Conteúdo Extra</span><span class="p">](</span><span class="sx">https://exemplo.com/extra.md</span><span class="p">)</span>: Material complementar
+</code></pre></div></div>
+
+<h3 id="regras-da-especificação">Regras da Especificação</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th style="text-align: center">Obrigatório?</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge"># Título</code> (H1)</td>
+      <td style="text-align: center">✅</td>
+      <td>Nome do projeto/site</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt; Blockquote</code></td>
+      <td style="text-align: center">❌</td>
+      <td>Resumo curto</td>
+    </tr>
+    <tr>
+      <td>Parágrafos</td>
+      <td style="text-align: center">❌</td>
+      <td>Contexto adicional</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">## Seções</code> (H2)</td>
+      <td style="text-align: center">❌</td>
+      <td>Agrupam links por tema</td>
+    </tr>
+    <tr>
+      <td>Links em lista</td>
+      <td style="text-align: center">❌</td>
+      <td><code class="language-plaintext highlighter-rouge">- [nome](url): descrição</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">## Optional</code></td>
+      <td style="text-align: center">❌</td>
+      <td>Seção especial — conteúdo que pode ser ignorado se a janela de contexto for pequena</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="o-detalhe-genial-arquivos-md">O Detalhe Genial: Arquivos .md</h3>
+
+<p>Além do <code class="language-plaintext highlighter-rouge">llms.txt</code>, a proposta sugere que cada página do site tenha uma <strong>versão Markdown</strong> acessível adicionando <code class="language-plaintext highlighter-rouge">.md</code> à URL:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://meusite.com/sobre       → página HTML normal
+https://meusite.com/sobre.md    → versão limpa em Markdown
+</code></pre></div></div>
+
+<p>Isso permite que LLMs acessem conteúdo limpo sem precisar processar HTML.</p>
+
+<h3 id="arquivos-expandidos">Arquivos Expandidos</h3>
+
+<p>A especificação também define dois arquivos gerados automaticamente a partir do <code class="language-plaintext highlighter-rouge">llms.txt</code>:</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">llms-ctx.txt</code></strong> — Concatenação de todos os arquivos linkados (exceto os da seção Optional)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">llms-ctx-full.txt</code></strong> — Concatenação completa, incluindo os opcionais</li>
+</ul>
+
+<p>Esses arquivos são gerados pela ferramenta CLI <a href="https://github.com/AnswerDotAI/llms-txt"><code class="language-plaintext highlighter-rouge">llms_txt2ctx</code></a> e oferecem um “pacote completo” que cabe numa única chamada de API.</p>
+
+<hr />
+
+<h2 id="3-geo-generative-engine-optimization">3. GEO: Generative Engine Optimization</h2>
+
+<h3 id="o-novo-paradigma">O Novo Paradigma</h3>
+
+<p>Se <strong>SEO</strong> otimiza conteúdo para aparecer nos resultados do Google, <strong>GEO</strong> otimiza conteúdo para ser <strong>citado e referenciado por IAs generativas</strong>.</p>
+
+<p>Pense assim:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspecto</th>
+      <th>SEO Tradicional</th>
+      <th>GEO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Alvo</strong></td>
+      <td>Google, Bing</td>
+      <td>ChatGPT, Perplexity, Claude, Gemini</td>
+    </tr>
+    <tr>
+      <td><strong>Como funciona</strong></td>
+      <td>Crawler indexa HTML</td>
+      <td>LLM processa texto limpo</td>
+    </tr>
+    <tr>
+      <td><strong>Resultado</strong></td>
+      <td>Link na página de busca</td>
+      <td>Citação na resposta da IA</td>
+    </tr>
+    <tr>
+      <td><strong>Formato ideal</strong></td>
+      <td>HTML semântico + meta tags</td>
+      <td>Markdown limpo + contexto estruturado</td>
+    </tr>
+    <tr>
+      <td><strong>Métrica</strong></td>
+      <td>Posição no ranking</td>
+      <td>Frequência de citação</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="por-que-geo-importa">Por Que GEO Importa?</h3>
+
+<p>A mudança já está acontecendo:</p>
+
+<ol>
+  <li><strong>Perplexity</strong> e <strong>ChatGPT com browsing</strong> já são usados como alternativas ao Google por milhões de pessoas</li>
+  <li><strong>Assistentes de código</strong> (Copilot, Cursor) consomem documentação técnica diretamente</li>
+  <li><strong>Agentes autônomos</strong> precisam entender sites para executar tarefas</li>
+  <li>Cada vez mais, a resposta que o usuário recebe <strong>não vem de um link</strong> — vem <strong>gerada por uma IA</strong> que consumiu seu conteúdo</li>
+</ol>
+
+<p>Se sua documentação, seu blog ou seu produto não está acessível de forma limpa para LLMs, você está <strong>invisível</strong> para essa nova camada da web.</p>
+
+<h3 id="os-pilares-do-geo">Os Pilares do GEO</h3>
+
+<p><strong>1. Conteúdo Estruturado e Limpo</strong></p>
+
+<ul>
+  <li>Use Markdown ao invés de HTML complexo</li>
+  <li>Organize com headings claros (H1 &gt; H2 &gt; H3)</li>
+  <li>Seja direto — LLMs se beneficiam de clareza</li>
+</ul>
+
+<p><strong>2. Contexto Rico</strong></p>
+
+<ul>
+  <li>Descreva relações entre conceitos</li>
+  <li>Use exemplos concretos</li>
+  <li>Inclua dados e fatos verificáveis</li>
+</ul>
+
+<p><strong>3. Metadados para IA</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">llms.txt</code> na raiz do site</li>
+  <li>Versões <code class="language-plaintext highlighter-rouge">.md</code> das páginas</li>
+  <li>Descrições claras nos links</li>
+</ul>
+
+<p><strong>4. Autoridade e Citabilidade</strong></p>
+
+<ul>
+  <li>Conteúdo original e com profundidade</li>
+  <li>Autoria clara</li>
+  <li>Fontes referenciadas</li>
+</ul>
+
+<hr />
+
+<h2 id="4-criando-seu-llmstxt--exemplo-prático">4. Criando Seu llms.txt — Exemplo Prático</h2>
+
+<p>Vamos supor que você tem um blog técnico. Aqui está um exemplo completo:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Blog da Nathana Facion</span>
+<span class="gt">
+&gt; Blog sobre Inteligência Artificial aplicada, desenvolvimento web</span>
+<span class="gt">&gt; e projetos práticos com IA.</span>
+
+Este blog documenta projetos práticos envolvendo LLMs, RAG,
+embeddings, e frameworks modernos como Next.js e React.
+
+<span class="gu">## Posts Principais</span>
+<span class="p">
+-</span> <span class="p">[</span><span class="nv">Busca RAG com Neo4j e Next.js</span><span class="p">](</span><span class="sx">/posts/busca-rag-carros-neo4j-nextjs.md</span><span class="p">)</span>: Tutorial completo de busca semântica com RAG, Neo4j, embeddings e GPT-4o-mini
+<span class="p">-</span> <span class="p">[</span><span class="nv">llms.txt e GEO</span><span class="p">](</span><span class="sx">/posts/llms-txt-geo-futuro-busca-ia.md</span><span class="p">)</span>: Guia sobre o padrão llms.txt e Generative Engine Optimization
+
+<span class="gu">## Sobre</span>
+<span class="p">
+-</span> <span class="p">[</span><span class="nv">Sobre Mim</span><span class="p">](</span><span class="sx">/sobre.md</span><span class="p">)</span>: Desenvolvedora e entusiasta de IA aplicada
+
+<span class="gu">## Optional</span>
+<span class="p">
+-</span> <span class="p">[</span><span class="nv">Arquivo de Posts</span><span class="p">](</span><span class="sx">/arquivo.md</span><span class="p">)</span>: Lista completa de todos os posts do blog
+</code></pre></div></div>
+
+<h3 id="passo-a-passo-para-implementar">Passo a Passo para Implementar</h3>
+
+<p><strong>1. Crie o arquivo <code class="language-plaintext highlighter-rouge">llms.txt</code> na raiz do seu site:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Se usa Jekyll (como este blog)</span>
+<span class="nb">touch </span>llms.txt
+
+<span class="c"># Se usa Next.js</span>
+<span class="c"># Coloque em /public/llms.txt</span>
+</code></pre></div></div>
+
+<p><strong>2. Crie versões Markdown das suas páginas principais:</strong></p>
+
+<p>Cada página importante deve ter uma versão <code class="language-plaintext highlighter-rouge">.md</code> limpa, sem navegação, sem scripts, sem ads — apenas conteúdo.</p>
+
+<p><strong>3. Gere os arquivos expandidos (opcional):</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>llms-txt
+llms_txt2ctx llms.txt <span class="o">&gt;</span> llms-ctx.txt
+llms_txt2ctx <span class="nt">--optional</span> llms.txt <span class="o">&gt;</span> llms-ctx-full.txt
+</code></pre></div></div>
+
+<p><strong>4. Adicione ao seu processo de build:</strong></p>
+
+<p>Se você usa um gerador de site estático, automatize a geração dos arquivos <code class="language-plaintext highlighter-rouge">.md</code> e do contexto expandido no seu pipeline de build.</p>
+
+<hr />
+
+<h2 id="5-o-ecossistema-já-existe">5. O Ecossistema Já Existe</h2>
+
+<p>A adoção do <code class="language-plaintext highlighter-rouge">llms.txt</code> está explodindo. Já existem <strong>milhares de sites</strong> listados nos diretórios <a href="https://llmstxt.site/">llmstxt.site</a> e <a href="https://directory.llmstxt.cloud/">directory.llmstxt.cloud</a>.</p>
+
+<h3 id="quem-já-adotou">Quem Já Adotou?</h3>
+
+<p>Empresas e projetos de peso já têm <code class="language-plaintext highlighter-rouge">llms.txt</code>:</p>
+
+<ul>
+  <li><strong>Anthropic</strong> (docs.anthropic.com/llms.txt)</li>
+  <li><strong>Cloudflare</strong> (developers.cloudflare.com/llms.txt)</li>
+  <li><strong>Stripe</strong> (docs.stripe.com/llms.txt)</li>
+  <li><strong>Next.js</strong> (nextjs.org/docs/llms.txt)</li>
+  <li><strong>Vercel AI SDK</strong> (sdk.vercel.ai/llms.txt)</li>
+  <li><strong>Cursor</strong> (cursor.com/llms.txt)</li>
+  <li><strong>ElevenLabs</strong> (elevenlabs.io/docs/llms.txt)</li>
+  <li><strong>Prisma</strong> (prisma.io/llms.txt)</li>
+</ul>
+
+<h3 id="plugins-e-ferramentas">Plugins e Ferramentas</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ferramenta</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/">vitepress-plugin-llms</a></td>
+      <td>Gera llms.txt automaticamente para sites VitePress</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/">docusaurus-plugin-llms</a></td>
+      <td>Plugin para Docusaurus</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/">llms-txt-php</a></td>
+      <td>Implementação em PHP</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/AnswerDotAI/llms-txt">llms_txt2ctx</a></td>
+      <td>CLI para gerar arquivos de contexto expandido</td>
+    </tr>
+    <tr>
+      <td>VS Code PagePilot</td>
+      <td>Extensão que usa llms.txt para navegação inteligente</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="6-o-futuro-seo--geo--visibility-everywhere">6. O Futuro: SEO + GEO = Visibility Everywhere</h2>
+
+<p>A mensagem principal é esta: <strong>o futuro da busca não é apenas SEO — é fornecer contexto limpo para qualquer engine que consuma seu conteúdo</strong>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>robots.txt  → "O que você PODE acessar"
+sitemap.xml → "O que EXISTE no meu site"
+llms.txt    → "O que você PRECISA SABER sobre meu site"
+</code></pre></div></div>
+
+<p>Cada padrão responde uma pergunta diferente. E agora, pela primeira vez, temos um padrão que fala diretamente com <strong>a inteligência que está consumindo nosso conteúdo</strong>, não apenas com o crawler que o indexa.</p>
+
+<h3 id="checklist-seu-site-está-pronto-para-geo">Checklist: Seu Site Está Pronto para GEO?</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Tem um <code class="language-plaintext highlighter-rouge">llms.txt</code> na raiz?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />O conteúdo principal tem versão Markdown limpa?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />As descrições são claras e concisas?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />A estrutura reflete a hierarquia real do seu conteúdo?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Os links apontam para conteúdo acessível?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Você tem uma seção <code class="language-plaintext highlighter-rouge">## Optional</code> para conteúdo secundário?</li>
+</ul>
+
+<hr />
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+  <li><a href="https://llmstxt.org/">llmstxt.org</a> — Especificação oficial por Jeremy Howard</li>
+  <li><a href="https://llmstxt.site/">llmstxt.site</a> — Diretório de sites com llms.txt</li>
+  <li><a href="https://directory.llmstxt.cloud/">directory.llmstxt.cloud</a> — Outro diretório de adoção</li>
+  <li><a href="https://github.com/AnswerDotAI/llms-txt">llms_txt2ctx no GitHub</a> — Ferramenta CLI oficial</li>
+</ul>
+
+<hr />
+
+<p><em>A web está evoluindo de “páginas para humanos indexadas por robôs” para “conteúdo estruturado consumido por inteligências”. O llms.txt é um passo simples, mas poderoso, nessa direção. E o GEO é a mentalidade que vai definir quem é encontrado — e citado — nessa nova era.</em></p>
+
+</div>
+
 
             <footer>
-                &copy; {{ site.time | date: '%Y' }} Nathana Facion — Feito com Jekyll &amp; GitHub Pages
+                &copy; 2026 Nathana Facion — Feito com Jekyll &amp; GitHub Pages
             </footer>
         </main>
     </div>
@@ -814,14 +1258,21 @@
     <!-- Search data & script -->
     <script>
     const posts = [
-        {% for post in site.posts %}
+        
         {
-            title: {{ post.title | jsonify }},
-            url: {{ post.url | jsonify }},
-            date: "{{ post.date | date: '%d/%m/%Y' }}",
-            tags: {{ post.tags | jsonify }}
-        }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
+            title: "Do robots.txt ao llms.txt: Como Preparar Seu Site Para a Era da IA com GEO",
+            url: "/2026/04/11/llms-txt-geo-futuro-busca-ia.html",
+            date: "11/04/2026",
+            tags: ["llms-txt","geo","seo","ia","llm","robots-txt","web","otimizacao","generative-engine-optimization","markdown"]
+        },
+        
+        {
+            title: "Construindo uma Busca Inteligente de Carros com RAG, Neo4j e Next.js",
+            url: "/2026/04/11/busca-rag-carros-neo4j-nextjs.html",
+            date: "11/04/2026",
+            tags: ["rag","neo4j","nextjs","ia","embeddings","typescript","openrouter","docker","llm","busca-vetorial"]
+        }
+        
     ];
 
     const searchInput = document.getElementById('searchInput');

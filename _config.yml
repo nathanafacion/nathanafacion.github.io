@@ -1,10 +1,8 @@
-title: Blog do Nathan
-email: seu-email@exemplo.com
-description: "Meu espaço para escrever sobre tecnologia e código."
+title: Nathana Facion
+description: "Frontend Developer — Blog sobre tecnologia, código e design."
 baseurl: ""
 url: "https://nathanafacion.github.io"
+author: Nathana Facion
 
-# Configurações de Build
-theme: minima
 plugins:
   - jekyll-feed

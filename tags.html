@@ -1,0 +1,28 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<h1 style="animation: fadeUp 0.5s ease both;">Tags</h1>
+<p style="color: var(--text-muted); animation: fadeUp 0.5s ease 0.05s both;">Todos os posts organizados por tag.</p>
+
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+<div id="{{ tag[0] }}" style="margin-top: 2rem; animation: fadeUp 0.5s ease both;">
+  <h2 style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="tag">{{ tag[0] }}</span>
+    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400;">{{ tag[1].size }} post{% if tag[1].size > 1 %}s{% endif %}</span>
+  </h2>
+  <ul class="post-list" style="list-style: none; padding: 0;">
+    {% for post in tag[1] %}
+    <li>
+      <a href="{{ post.url }}" class="post-card" style="display: block; margin-bottom: 0.75rem;">
+        <span class="post-card-title">{{ post.title }}</span>
+        <span class="post-card-date" style="display: block;">{{ post.date | date: "%d/%m/%Y" }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}

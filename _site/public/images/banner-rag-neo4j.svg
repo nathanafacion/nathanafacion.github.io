@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#13111c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="50%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="60"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Glow orbs -->
+  <circle cx="900" cy="200" r="200" fill="#a78bfa" opacity="0.08" filter="url(#blur1)"/>
+  <circle cx="300" cy="450" r="150" fill="#6366f1" opacity="0.06" filter="url(#blur1)"/>
+  <circle cx="700" cy="500" r="120" fill="#818cf8" opacity="0.05" filter="url(#blur2)"/>
+  
+  <!-- Grid pattern (subtle) -->
+  <g stroke="#2a2a3a" stroke-width="0.5" opacity="0.3">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  
+  <!-- Neo4j-style Graph nodes and edges -->
+  <g opacity="0.6">
+    <!-- Edges -->
+    <line x1="820" y1="150" x2="950" y2="230" stroke="#a78bfa" stroke-width="2" opacity="0.4"/>
+    <line x1="950" y1="230" x2="1050" y2="160" stroke="#818cf8" stroke-width="2" opacity="0.4"/>
+    <line x1="950" y1="230" x2="900" y2="350" stroke="#6366f1" stroke-width="2" opacity="0.4"/>
+    <line x1="820" y1="150" x2="900" y2="350" stroke="#a78bfa" stroke-width="1.5" opacity="0.3"/>
+    <line x1="900" y1="350" x2="1050" y2="380" stroke="#818cf8" stroke-width="2" opacity="0.4"/>
+    <line x1="1050" y1="160" x2="1100" y2="300" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
+    <line x1="1100" y1="300" x2="1050" y2="380" stroke="#a78bfa" stroke-width="2" opacity="0.4"/>
+    <line x1="820" y1="150" x2="750" y2="280" stroke="#818cf8" stroke-width="1.5" opacity="0.3"/>
+    <line x1="750" y1="280" x2="900" y2="350" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Nodes -->
+    <circle cx="820" cy="150" r="18" fill="#16151f" stroke="url(#accent)" stroke-width="2.5"/>
+    <circle cx="950" cy="230" r="22" fill="#16151f" stroke="url(#accent)" stroke-width="2.5"/>
+    <circle cx="1050" cy="160" r="15" fill="#16151f" stroke="url(#accent)" stroke-width="2"/>
+    <circle cx="900" cy="350" r="20" fill="#16151f" stroke="url(#accent)" stroke-width="2.5"/>
+    <circle cx="1050" cy="380" r="16" fill="#16151f" stroke="url(#accent)" stroke-width="2"/>
+    <circle cx="1100" cy="300" r="13" fill="#16151f" stroke="url(#accent)" stroke-width="2"/>
+    <circle cx="750" cy="280" r="14" fill="#16151f" stroke="url(#accent)" stroke-width="2"/>
+    
+    <!-- Node inner dots -->
+    <circle cx="820" cy="150" r="5" fill="#a78bfa"/>
+    <circle cx="950" cy="230" r="7" fill="#818cf8"/>
+    <circle cx="1050" cy="160" r="4" fill="#6366f1"/>
+    <circle cx="900" cy="350" r="6" fill="#a78bfa"/>
+    <circle cx="1050" cy="380" r="5" fill="#818cf8"/>
+    <circle cx="1100" cy="300" r="4" fill="#6366f1"/>
+    <circle cx="750" cy="280" r="4" fill="#a78bfa"/>
+  </g>
+
+  <!-- Embedding vectors (floating arrows) -->
+  <g opacity="0.25">
+    <path d="M 100 480 L 160 460 L 155 465 M 160 460 L 152 455" stroke="#a78bfa" stroke-width="1.5" fill="none"/>
+    <path d="M 130 510 L 200 500 L 195 505 M 200 500 L 192 495" stroke="#818cf8" stroke-width="1.5" fill="none"/>
+    <path d="M 110 540 L 180 520 L 175 525 M 180 520 L 172 515" stroke="#6366f1" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Car icon (simplified) -->
+  <g transform="translate(850, 430)" opacity="0.15">
+    <path d="M 40 20 L 55 0 L 95 0 L 110 20 L 120 20 C 125 20 130 25 130 30 L 130 45 C 130 50 125 55 120 55 L 30 55 C 25 55 20 50 20 45 L 20 30 C 20 25 25 20 30 20 Z" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="45" cy="55" r="8" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="105" cy="55" r="8" fill="none" stroke="#a78bfa" stroke-width="2"/>
+  </g>
+
+  <!-- Tags -->
+  <g>
+    <rect x="80" y="450" rx="12" ry="12" width="60" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="110" y="468" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">RAG</text>
+    
+    <rect x="150" y="450" rx="12" ry="12" width="70" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="185" y="468" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">Neo4j</text>
+    
+    <rect x="230" y="450" rx="12" ry="12" width="80" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="270" y="468" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">Next.js</text>
+    
+    <rect x="320" y="450" rx="12" ry="12" width="100" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="370" y="468" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">Embeddings</text>
+  </g>
+
+  <!-- Title -->
+  <text x="80" y="200" font-family="Inter, sans-serif" font-size="42" font-weight="800" fill="#e4e4ed" letter-spacing="-0.02em">
+    Busca Inteligente
+  </text>
+  <text x="80" y="255" font-family="Inter, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.02em">
+    <tspan fill="#a78bfa">de Carros</tspan>
+    <tspan fill="#e4e4ed"> com</tspan>
+    <tspan fill="#818cf8"> RAG</tspan>
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="310" font-family="Inter, sans-serif" font-size="18" fill="#8888a0" font-weight="400">
+    Neo4j · Embeddings · GPT-4o-mini · Next.js · TypeScript
+  </text>
+
+  <!-- Separator line -->
+  <line x1="80" y1="350" x2="500" y2="350" stroke="url(#accent)" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Author -->
+  <text x="80" y="400" font-family="Inter, sans-serif" font-size="15" fill="#8888a0">
+    por
+  </text>
+  <text x="110" y="400" font-family="Inter, sans-serif" font-size="15" fill="#a78bfa" font-weight="600">
+    Nathana Facion
+  </text>
+  
+  <!-- Border -->
+  <rect x="2" y="2" width="1196" height="626" rx="12" ry="12" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+</svg>
