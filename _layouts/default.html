@@ -797,7 +797,7 @@
                     {% endfor %}
                 {% endfor %}
                 {% for tag in all_tags %}
-                <a class="tag" href="/tags#{{ tag }}">{{ tag }}</a>
+                <a class="tag" href="#" data-filter-tag="{{ tag }}">{{ tag }}</a>
                 {% endfor %}
             </div>
         </aside>
@@ -820,7 +820,9 @@
             title: {{ post.title | jsonify }},
             url: {{ post.url | jsonify }},
             date: "{{ post.date | date: '%d/%m/%Y' }}",
-            tags: {{ post.tags | jsonify }}
+            tags: {{ post.tags | jsonify }},
+            image: {{ post.image | jsonify }},
+            description: {{ post.description | jsonify }}
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
     ];
@@ -861,6 +863,92 @@
         document.getElementById('sidebar').classList.toggle('open');
         document.getElementById('sidebarOverlay').classList.toggle('active');
     }
+
+    // Tag filter from sidebar
+    document.querySelectorAll('[data-filter-tag]').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tag = this.getAttribute('data-filter-tag');
+            const main = document.querySelector('.main');
+            const originalContent = document.getElementById('original-content');
+
+            // If already showing filtered view, check if we have stored original
+            if (!originalContent) {
+                // Store original content
+                const wrapper = document.createElement('div');
+                wrapper.id = 'original-content';
+                wrapper.style.display = 'none';
+                while (main.firstChild) {
+                    wrapper.appendChild(main.firstChild);
+                }
+                main.appendChild(wrapper);
+            }
+
+            // Build filtered view
+            const filtered = posts.filter(function(p) {
+                return p.tags && p.tags.some(function(t) {
+                    return t.toLowerCase() === tag.toLowerCase();
+                });
+            });
+
+            var html = '<div id="filtered-view">';
+            html += '<a href="#" id="clear-filter" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 1rem;">&larr; Voltar para todos os posts</a>';
+            html += '<h1 style="font-size: 2.2rem; animation: fadeUp 0.5s ease both;"><span class="tag" style="font-size: 1.1rem; padding: 0.4rem 1rem;">' + tag + '</span></h1>';
+            html += '<p style="color: var(--text-muted); margin-bottom: 2rem;">' + filtered.length + ' post' + (filtered.length !== 1 ? 's' : '') + ' com esta tag</p>';
+            html += '<ul class="post-list" style="list-style: none; padding: 0;">';
+            filtered.forEach(function(p) {
+                html += '<li><div class="post-card" style="margin-bottom: 2.5rem;">';
+                if (p.image) {
+                    html += '<a href="' + p.url + '" class="post-card-image-link"><img src="' + p.image + '" alt="' + p.title + '" class="post-card-image"></a>';
+                }
+                html += '<a href="' + p.url + '" class="post-card-title-link"><span class="post-card-title">' + p.title + '</span></a>';
+                html += '<span class="post-card-date">' + p.date + '</span>';
+                if (p.description) {
+                    html += '<p class="post-card-description">' + p.description + '</p>';
+                }
+                if (p.tags) {
+                    html += '<div class="tags">';
+                    p.tags.forEach(function(t) {
+                        html += '<span class="tag">' + t + '</span>';
+                    });
+                    html += '</div>';
+                }
+                html += '<a href="' + p.url + '" class="post-card-readmore">Veja mais &rarr;</a>';
+                html += '</div></li>';
+            });
+            html += '</ul></div>';
+
+            // Remove existing filtered view or footer, then insert
+            var existingFiltered = document.getElementById('filtered-view');
+            if (existingFiltered) existingFiltered.remove();
+
+            var footer = main.querySelector('footer');
+            main.insertAdjacentHTML('afterbegin', html);
+            if (footer) main.appendChild(footer);
+
+            // Clear filter handler
+            document.getElementById('clear-filter').addEventListener('click', function(ev) {
+                ev.preventDefault();
+                var filteredView = document.getElementById('filtered-view');
+                if (filteredView) filteredView.remove();
+                var stored = document.getElementById('original-content');
+                if (stored) {
+                    stored.style.display = '';
+                    while (stored.firstChild) {
+                        main.insertBefore(stored.firstChild, main.querySelector('footer'));
+                    }
+                    stored.remove();
+                }
+            });
+
+            // Close sidebar on mobile
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar && sidebar.classList.contains('open')) toggleSidebar();
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
     </script>
 </body>
 </html>
