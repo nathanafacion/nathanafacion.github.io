@@ -6,6 +6,7 @@ description: "Entenda as 3 métricas que o Google usa para medir a experiência 
 tags:
   [core-web-vitals, performance, seo, lcp, cls, inp, web, ux, google, frontend]
 image: /public/images/banner-core-web-vitals.svg
+og_image: /public/images/banner-core-web-vitals.png
 ---
 
 Se você trabalha com SEO, UX ou desenvolvimento front-end, já sabe: **o Google não perdoa sites lentos**. Mas velocidade pura não é o único fator que importa. Os **Core Web Vitals (CWV)** vão além — eles medem a **experiência real do usuário**, e em 2026 continuam sendo um dos sinais de ranqueamento mais importantes.

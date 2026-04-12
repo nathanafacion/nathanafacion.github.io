@@ -2,3 +2,6 @@ _site/
 .jekyll-cache/
 .sass-cache/
 .github/agents/
+node_modules/
+package.json
+package-lock.json

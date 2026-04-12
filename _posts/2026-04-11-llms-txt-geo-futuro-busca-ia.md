@@ -17,6 +17,7 @@ tags:
     markdown,
   ]
 image: /public/images/banner-llms-txt-geo.svg
+og_image: /public/images/banner-llms-txt-geo.png
 ---
 
 ## A web está mudando — e as máquinas também

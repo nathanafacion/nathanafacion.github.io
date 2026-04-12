@@ -17,6 +17,7 @@ tags:
     busca-vetorial,
   ]
 image: /public/images/banner-rag-neo4j.svg
+og_image: /public/images/banner-rag-neo4j.png
 ---
 
 Imagine digitar **"carro vermelho dos anos 90"** e o sistema entender exatamente o que você quer — sem precisar preencher filtros de marca, ano, cor, ou combustível. Isso é **busca por similaridade semântica**, e neste post vou mostrar como construí essa aplicação do zero usando **RAG (Retrieval-Augmented Generation)**.

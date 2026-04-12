@@ -17,6 +17,7 @@ tags:
     escalabilidade,
   ]
 image: /public/images/banner-module-federation.svg
+og_image: /public/images/banner-module-federation.png
 ---
 
 Imagine que sua empresa tem 5 times, cada um responsável por uma parte do produto: checkout, catálogo, dashboard, onboarding e perfil. Cada time mantém sua própria aplicação React. Um dia, o time de design atualiza o `<BotaoComprar />`. Antes do Module Federation, **todos os 5 times** precisariam atualizar a dependência no NPM, rodar `npm install` e fazer um novo build. Com Module Federation, a atualização é **instantânea** — sem tocar no código dos outros projetos.
