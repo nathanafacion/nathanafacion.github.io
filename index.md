@@ -6,7 +6,7 @@ title: Home
 <h1 style="font-size: 2.2rem; animation: fadeUp 0.5s ease both;">
   <span style="background: linear-gradient(135deg, #a78bfa, #818cf8, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Blog</span>
 </h1>
-<p style="color: var(--text-muted); margin-bottom: 2rem; animation: fadeUp 0.5s ease 0.05s both;">Pensamentos sobre frontend, código e tecnologia.</p>
+<p style="color: var(--text-muted); margin-bottom: 2rem; animation: fadeUp 0.5s ease 0.05s both;">Pensamentos sobre frontend, inteligência artificial, código e tecnologia.</p>
 
 <ul class="post-list">
 {% for post in site.posts %}

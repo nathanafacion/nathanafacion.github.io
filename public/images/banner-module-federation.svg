@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#13111c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="50%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="nodeA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#818cf8"/>
+    </linearGradient>
+    <linearGradient id="nodeB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="60"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
+    </filter>
+    <filter id="glowSmall">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Glow orbs -->
+  <circle cx="850" cy="280" r="250" fill="#a78bfa" opacity="0.06" filter="url(#blur1)"/>
+  <circle cx="300" cy="150" r="180" fill="#6366f1" opacity="0.05" filter="url(#blur1)"/>
+  <circle cx="700" cy="500" r="140" fill="#818cf8" opacity="0.04" filter="url(#blur2)"/>
+  
+  <!-- Dotted grid -->
+  <g fill="#2a2a3a" opacity="0.35">
+    <circle cx="100" cy="100" r="1.5"/><circle cx="200" cy="100" r="1.5"/><circle cx="300" cy="100" r="1.5"/><circle cx="400" cy="100" r="1.5"/><circle cx="500" cy="100" r="1.5"/><circle cx="600" cy="100" r="1.5"/><circle cx="700" cy="100" r="1.5"/><circle cx="800" cy="100" r="1.5"/><circle cx="900" cy="100" r="1.5"/><circle cx="1000" cy="100" r="1.5"/><circle cx="1100" cy="100" r="1.5"/>
+    <circle cx="100" cy="200" r="1.5"/><circle cx="200" cy="200" r="1.5"/><circle cx="300" cy="200" r="1.5"/><circle cx="400" cy="200" r="1.5"/><circle cx="500" cy="200" r="1.5"/><circle cx="600" cy="200" r="1.5"/><circle cx="700" cy="200" r="1.5"/><circle cx="800" cy="200" r="1.5"/><circle cx="900" cy="200" r="1.5"/><circle cx="1000" cy="200" r="1.5"/><circle cx="1100" cy="200" r="1.5"/>
+    <circle cx="100" cy="300" r="1.5"/><circle cx="200" cy="300" r="1.5"/><circle cx="300" cy="300" r="1.5"/><circle cx="400" cy="300" r="1.5"/><circle cx="500" cy="300" r="1.5"/><circle cx="600" cy="300" r="1.5"/><circle cx="700" cy="300" r="1.5"/><circle cx="800" cy="300" r="1.5"/><circle cx="900" cy="300" r="1.5"/><circle cx="1000" cy="300" r="1.5"/><circle cx="1100" cy="300" r="1.5"/>
+    <circle cx="100" cy="400" r="1.5"/><circle cx="200" cy="400" r="1.5"/><circle cx="300" cy="400" r="1.5"/><circle cx="400" cy="400" r="1.5"/><circle cx="500" cy="400" r="1.5"/><circle cx="600" cy="400" r="1.5"/><circle cx="700" cy="400" r="1.5"/><circle cx="800" cy="400" r="1.5"/><circle cx="900" cy="400" r="1.5"/><circle cx="1000" cy="400" r="1.5"/><circle cx="1100" cy="400" r="1.5"/>
+    <circle cx="100" cy="500" r="1.5"/><circle cx="200" cy="500" r="1.5"/><circle cx="300" cy="500" r="1.5"/><circle cx="400" cy="500" r="1.5"/><circle cx="500" cy="500" r="1.5"/><circle cx="600" cy="500" r="1.5"/><circle cx="700" cy="500" r="1.5"/><circle cx="800" cy="500" r="1.5"/><circle cx="900" cy="500" r="1.5"/><circle cx="1000" cy="500" r="1.5"/><circle cx="1100" cy="500" r="1.5"/>
+  </g>
+
+  <!-- Micro-frontend architecture diagram -->
+  
+  <!-- Connection lines (behind nodes) -->
+  <!-- Host to Remote 1 -->
+  <line x1="870" y1="230" x2="770" y2="155" stroke="#a78bfa" stroke-width="2" opacity="0.35" stroke-dasharray="6,4"/>
+  <!-- Host to Remote 2 -->
+  <line x1="870" y1="230" x2="1050" y2="155" stroke="#818cf8" stroke-width="2" opacity="0.35" stroke-dasharray="6,4"/>
+  <!-- Host to Remote 3 -->
+  <line x1="870" y1="230" x2="770" y2="330" stroke="#6366f1" stroke-width="2" opacity="0.35" stroke-dasharray="6,4"/>
+  <!-- Host to Remote 4 -->
+  <line x1="870" y1="230" x2="1050" y2="330" stroke="#a78bfa" stroke-width="2" opacity="0.35" stroke-dasharray="6,4"/>
+
+  <!-- Animated data flow dots on lines -->
+  <circle r="3" fill="#a78bfa" opacity="0.8">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M870,230 L770,155"/>
+  </circle>
+  <circle r="3" fill="#818cf8" opacity="0.8">
+    <animateMotion dur="2.4s" repeatCount="indefinite" path="M1050,155 L870,230"/>
+  </circle>
+  <circle r="3" fill="#6366f1" opacity="0.8">
+    <animateMotion dur="1.8s" repeatCount="indefinite" path="M770,330 L870,230"/>
+  </circle>
+  <circle r="3" fill="#a78bfa" opacity="0.8">
+    <animateMotion dur="2.2s" repeatCount="indefinite" path="M1050,330 L870,230"/>
+  </circle>
+
+  <!-- Host node (center) -->
+  <circle cx="870" cy="230" r="44" fill="#16151f" stroke="url(#nodeA)" stroke-width="2.5"/>
+  <circle cx="870" cy="230" r="54" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.15"/>
+  <text x="870" y="225" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="700">HOST</text>
+  <text x="870" y="240" font-family="Fira Code, monospace" font-size="9" fill="#8888a0" text-anchor="middle">App Principal</text>
+
+  <!-- Remote 1 (top-left) -->
+  <rect x="720" y="120" width="100" height="55" rx="8" fill="#16151f" stroke="#2a2a3a" stroke-width="1.5"/>
+  <text x="770" y="143" font-family="Fira Code, monospace" font-size="9" fill="#a78bfa" text-anchor="middle" font-weight="600">Vendas</text>
+  <text x="770" y="163" font-family="Fira Code, monospace" font-size="8" fill="#555568" text-anchor="middle">remoteEntry.js</text>
+
+  <!-- Remote 2 (top-right) -->
+  <rect x="1000" y="120" width="100" height="55" rx="8" fill="#16151f" stroke="#2a2a3a" stroke-width="1.5"/>
+  <text x="1050" y="143" font-family="Fira Code, monospace" font-size="9" fill="#818cf8" text-anchor="middle" font-weight="600">Catálogo</text>
+  <text x="1050" y="163" font-family="Fira Code, monospace" font-size="8" fill="#555568" text-anchor="middle">remoteEntry.js</text>
+
+  <!-- Remote 3 (bottom-left) -->
+  <rect x="720" y="300" width="100" height="55" rx="8" fill="#16151f" stroke="#2a2a3a" stroke-width="1.5"/>
+  <text x="770" y="323" font-family="Fira Code, monospace" font-size="9" fill="#6366f1" text-anchor="middle" font-weight="600">Dashboard</text>
+  <text x="770" y="343" font-family="Fira Code, monospace" font-size="8" fill="#555568" text-anchor="middle">remoteEntry.js</text>
+
+  <!-- Remote 4 (bottom-right) -->
+  <rect x="1000" y="300" width="100" height="55" rx="8" fill="#16151f" stroke="#2a2a3a" stroke-width="1.5"/>
+  <text x="1050" y="323" font-family="Fira Code, monospace" font-size="9" fill="#a78bfa" text-anchor="middle" font-weight="600">Perfil</text>
+  <text x="1050" y="343" font-family="Fira Code, monospace" font-size="8" fill="#555568" text-anchor="middle">remoteEntry.js</text>
+
+  <!-- Shared deps bubble -->
+  <rect x="830" y="370" width="80" height="30" rx="15" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.25)" stroke-width="1"/>
+  <text x="870" y="390" font-family="Fira Code, monospace" font-size="10" fill="#a78bfa" text-anchor="middle">React ×1</text>
+
+  <!-- Code snippet preview -->
+  <g transform="translate(700, 420)" opacity="0.3">
+    <rect x="0" y="0" width="420" height="70" rx="8" fill="#16151f" stroke="#2a2a3a" stroke-width="1"/>
+    <text x="15" y="22" font-family="Fira Code, monospace" font-size="10" fill="#6366f1">const</text>
+    <text x="50" y="22" font-family="Fira Code, monospace" font-size="10" fill="#e4e4ed"> Botao = React.lazy(</text>
+    <text x="15" y="40" font-family="Fira Code, monospace" font-size="10" fill="#8888a0">  () =&gt; </text>
+    <text x="65" y="40" font-family="Fira Code, monospace" font-size="10" fill="#a78bfa">import</text>
+    <text x="110" y="40" font-family="Fira Code, monospace" font-size="10" fill="#e4e4ed">(</text>
+    <text x="118" y="40" font-family="Fira Code, monospace" font-size="10" fill="#818cf8">"vendas/Botao"</text>
+    <text x="252" y="40" font-family="Fira Code, monospace" font-size="10" fill="#e4e4ed">)</text>
+    <text x="15" y="58" font-family="Fira Code, monospace" font-size="10" fill="#e4e4ed">);</text>
+  </g>
+
+  <!-- Tags -->
+  <g>
+    <rect x="80" y="460" rx="12" ry="12" width="145" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="152" y="478" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">Module Federation</text>
+    
+    <rect x="235" y="460" rx="12" ry="12" width="90" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="280" y="478" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">Webpack</text>
+    
+    <rect x="335" y="460" rx="12" ry="12" width="130" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="400" y="478" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">Micro-Frontends</text>
+    
+    <rect x="475" y="460" rx="12" ry="12" width="65" height="26" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="507" y="478" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">React</text>
+  </g>
+
+  <!-- Title -->
+  <text x="80" y="155" font-family="Inter, sans-serif" font-size="20" fill="#8888a0" font-weight="500" letter-spacing="0.08em">
+    WEBPACK 5
+  </text>
+  <text x="80" y="220" font-family="Inter, sans-serif" font-size="46" font-weight="800" letter-spacing="-0.02em">
+    <tspan fill="#a78bfa">Module</tspan>
+  </text>
+  <text x="80" y="275" font-family="Inter, sans-serif" font-size="46" font-weight="800" letter-spacing="-0.02em">
+    <tspan fill="#818cf8">Federation</tspan>
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="320" font-family="Inter, sans-serif" font-size="17" fill="#8888a0" font-weight="400">
+    Compartilhando código entre
+  </text>
+  <text x="80" y="345" font-family="Inter, sans-serif" font-size="17" fill="#8888a0" font-weight="400">
+    micro-frontends em tempo real
+  </text>
+
+  <!-- Separator line -->
+  <line x1="80" y1="375" x2="500" y2="375" stroke="url(#accent)" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Author -->
+  <text x="80" y="410" font-family="Inter, sans-serif" font-size="15" fill="#8888a0">
+    por
+  </text>
+  <text x="110" y="410" font-family="Inter, sans-serif" font-size="15" fill="#a78bfa" font-weight="600">
+    Nathana Facion
+  </text>
+  
+  <!-- Border -->
+  <rect x="2" y="2" width="1196" height="626" rx="12" ry="12" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+</svg>
