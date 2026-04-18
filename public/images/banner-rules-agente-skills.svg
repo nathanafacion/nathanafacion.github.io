@@ -1,0 +1,97 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg-gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#0a0a0f"/>
+    <stop offset="1" stop-color="#13111c"/>
+  </linearGradient>
+  <linearGradient id="title-gradient" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#a78bfa"/>
+    <stop offset="0.5" stop-color="#818cf8"/>
+    <stop offset="1" stop-color="#6366f1"/>
+  </linearGradient>
+  <filter id="glow1" x="-100" y="-100" width="1400" height="830" filterUnits="userSpaceOnUse">
+    <feGaussianBlur stdDeviation="80" result="blur"/>
+    <feFlood flood-color="#a78bfa" flood-opacity="0.08"/>
+    <feComposite in2="blur" operator="in"/>
+    <feBlend in2="SourceGraphic" mode="lighter"/>
+  </filter>
+  <filter id="glow2" x="-100" y="-100" width="1400" height="830" filterUnits="userSpaceOnUse">
+    <feGaussianBlur stdDeviation="120" result="blur"/>
+    <feFlood flood-color="#6366f1" flood-opacity="0.06"/>
+    <feComposite in2="blur" operator="in"/>
+    <feBlend in2="SourceGraphic" mode="lighter"/>
+  </filter>
+  <pattern id="dotgrid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="2" fill="#2a2a3a" fill-opacity="0.35"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="1200" height="630" rx="12" fill="url(#bg-gradient)"/>
+<rect x="0" y="0" width="1200" height="630" rx="12" fill="url(#dotgrid)"/>
+<g filter="url(#glow1)">
+  <ellipse cx="300" cy="180" rx="220" ry="120" fill="#a78bfa"/>
+</g>
+<g filter="url(#glow2)">
+  <ellipse cx="900" cy="500" rx="260" ry="140" fill="#6366f1"/>
+</g>
+<rect x="0.5" y="0.5" width="1199" height="629" rx="12" fill="none" stroke="#2a2a3a" stroke-width="1.5"/>
+
+<!-- Título -->
+<text x="60" y="150" font-family="Inter, sans-serif" font-size="52" font-weight="bold" fill="url(#title-gradient)">
+Rules, Agente e Skills
+</text>
+<!-- Subtítulo -->
+<text x="60" y="200" font-family="Inter, sans-serif" font-size="22" fill="#8888a0">
+Como cada bloco constrói IA autônoma e flexível
+</text>
+
+<!-- Tags -->
+<g font-family="Inter, sans-serif" font-size="18">
+  <rect x="60" y="230" rx="8" ry="8" width="82" height="32" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)"/>
+  <text x="80" y="252" fill="#a78bfa">#ia</text>
+  <rect x="150" y="230" rx="8" ry="8" width="110" height="32" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)"/>
+  <text x="170" y="252" fill="#a78bfa">#agentes</text>
+  <rect x="270" y="230" rx="8" ry="8" width="110" height="32" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)"/>
+  <text x="290" y="252" fill="#a78bfa">#skills</text>
+</g>
+
+<!-- Autor -->
+<text x="60" y="295" font-family="Inter, sans-serif" font-size="18" fill="#8888a0">por <tspan fill="#a78bfa">Nathana Facion</tspan></text>
+
+<!-- Elemento visual temático: Grafo de conexões (agente central, rules e skills conectados) -->
+<g>
+  <!-- Agente central -->
+  <circle cx="900" cy="260" r="44" fill="#18182a" stroke="#a78bfa" stroke-width="3"/>
+  <text x="900" y="267" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="#a78bfa" font-weight="bold">Agente</text>
+  <!-- Rules -->
+  <circle cx="780" cy="180" r="32" fill="#23234a" stroke="#818cf8" stroke-width="2"/>
+  <text x="780" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#818cf8">Rules</text>
+  <!-- Skills -->
+  <circle cx="1020" cy="180" r="32" fill="#23234a" stroke="#6366f1" stroke-width="2"/>
+  <text x="1020" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#6366f1">Skills</text>
+  <!-- Conexões -->
+  <line x1="900" y1="260" x2="780" y2="180" stroke="#818cf8" stroke-width="3"/>
+  <line x1="900" y1="260" x2="1020" y2="180" stroke="#6366f1" stroke-width="3"/>
+  <!-- Dots -->
+  <circle cx="840" cy="220" r="6" fill="#818cf8"/>
+  <circle cx="960" cy="220" r="6" fill="#6366f1"/>
+</g>
+
+<!-- Esquemático: bloco de rule (if/else), bloco de skill (engrenagem) -->
+<g>
+  <!-- Rule: if/else -->
+  <rect x="720" y="120" width="60" height="24" rx="6" fill="#18182a" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="750" y="137" font-family="Fira Code, monospace" font-size="14" fill="#818cf8">if/else</text>
+  <!-- Skill: engrenagem -->
+  <circle cx="1080" cy="120" r="14" fill="#18182a" stroke="#6366f1" stroke-width="1.5"/>
+  <g>
+    <circle cx="1080" cy="120" r="6" fill="#6366f1"/>
+    <g stroke="#6366f1" stroke-width="2">
+      <line x1="1080" y1="106" x2="1080" y2="134"/>
+      <line x1="1066" y1="120" x2="1094" y2="120"/>
+      <line x1="1070" y1="110" x2="1090" y2="130"/>
+      <line x1="1070" y1="130" x2="1090" y2="110"/>
+    </g>
+  </g>
+</g>
+
+</svg>
