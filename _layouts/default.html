@@ -865,22 +865,19 @@
             <div class="sidebar-divider"></div>
                         <div style="width:100%;text-align:center;margin-bottom:0.5em;font-weight:600;letter-spacing:0.02em;color:var(--accent);font-size:0.93em;">Top Tags</div>
                         <div class="tags" style="justify-content: center;">
-                                {% assign tags = site.tags %}
-                                {% assign tags_list = '' | split: '' %}
-                                {% for tag in tags %}
-                                    {% assign tag_name = tag[0] %}
-                                    {% assign tag_count = tag[1].size %}
-                                    {% assign tags_list = tags_list | push: tag_name | push: tag_count %}
-                                {% endfor %}
-                                {% capture tags_str %}{% for tag in tags %}{{ tag[0] }}:{{ tag[1].size }},{% endfor %}{% endcapture %}
-                                {% assign tags_arr = tags_str | split: ',' %}
-                                {% assign sorted_tags = tags_arr | sort %}
-                                {% assign sorted_tags = sorted_tags | reverse %}
-                                {% assign top_tags = sorted_tags | slice: 0, 10 %}
+                                {% assign tag_pairs = site.tags %}
+                                {% capture tag_freqs_str %}{% for tag in tag_pairs %}{% assign count = tag[1].size %}{% assign padded = count | prepend: '00' | slice: -3, 3 %}{{ padded }}:{{ tag[0] }},{% endfor %}{% endcapture %}
+                                {% assign tag_freqs_arr = tag_freqs_str | split: ',' %}
+                                {% assign tag_freqs_arr = tag_freqs_arr | sort %}
+                                {% assign tag_freqs_arr = tag_freqs_arr | reverse %}
+                                {% assign top_tags = tag_freqs_arr | slice: 0, 10 %}
                                 {% for tag_count in top_tags %}
                                     {% unless tag_count == '' %}
                                         {% assign tag_parts = tag_count | split: ':' %}
-                                        <a class="tag" href="#" data-filter-tag="{{ tag_parts[0] }}">{{ tag_parts[0] }} <span style="opacity:0.7;font-size:0.85em;">({{ tag_parts[1] }})</span></a>
+                                        {% assign padded_count = tag_parts[0] %}
+                                        {% assign tag_name = tag_parts[1] %}
+                                        {% assign count = padded_count | plus: 0 %}
+                                        <a class="tag" href="#" data-filter-tag="{{ tag_name }}">{{ tag_name }} <span style="opacity:0.7;font-size:0.85em;">({{ count }})</span></a>
                                     {% endunless %}
                                 {% endfor %}
             </div>
