@@ -1,0 +1,141 @@
+<!-- Choices.js CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<style>
+.choices__placeholder {
+  color: var(--text-muted) !important;
+  font-size: 0.88rem !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 400 !important;
+}
+/* Campo de busca do Choices.js igual ao select */
+.choices__input {
+  background: transparent !important;
+  color: var(--text) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Corrige fundo branco do input de busca do Choices.js */
+.choices__inner {
+  min-height: 44px;
+  border-radius: 8px;
+  background: var(--tag-bg) !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--tag-border) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 600px;
+}
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  background: var(--sidebar-bg) !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--tag-border) !important;
+  z-index: 9999 !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background:var(--sidebar-bg) !important;
+  color: var(--accent) !important;
+}
+/* Choices.js customizado para tema do site */
+.choices__inner {
+  min-height: 44px;
+  border-radius: 8px;
+  background: var(--tag-bg);
+  color: var(--accent);
+  border: 1px solid var(--tag-border);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.choices__list--multiple .choices__item {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--accent) !important;
+  font-weight: 600;
+  margin: 2px 4px 2px 0;
+  padding: 0.25rem 0.85rem;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+.choices__list--dropdown .choices__item--selectable {
+  background: var(--tag-bg);
+  color: var(--accent);
+  border-radius: 0 !important;
+  border: 1px solid var(--tag-border);
+  margin: 2px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.25s;
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background: rgba(167, 139, 250, 0.2);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.choices__placeholder {
+  color: var(--text-muted);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var select = document.getElementById('tag-select');
+  var choicesInstance = null;
+  if (select) {
+    choicesInstance = new Choices(select, {
+      removeItemButton: true,
+      placeholder: true,
+      placeholderValue: 'Filtrar por tags...',
+      searchPlaceholderValue: 'Buscar tag',
+      noResultsText: 'Nenhuma tag encontrada',
+      itemSelectText: '',
+      shouldSort: true
+    });
+    // Adiciona botão reset fixo à direita do input
+    if (!document.getElementById('choices-reset-btn')) {
+      var btn = document.createElement('button');
+      btn.id = 'choices-reset-btn';
+      btn.type = 'button';
+      btn.textContent = '✕';
+      btn.title = 'Limpar seleção';
+      btn.style = 'position:absolute; top:50%; right:10px; transform:translateY(-50%); background:transparent; border:none; color:var(--text-muted); font-size:1.2rem; cursor:pointer; z-index:10; padding:0; margin:0;';
+      // Cria um wrapper relativo se não existir
+      var wrapper = select.closest('.choices');
+      if (wrapper) {
+        wrapper.style.position = 'relative';
+        var inner = wrapper.querySelector('.choices__inner');
+        if (inner) {
+          inner.style.paddingRight = '2.2em';
+          inner.parentNode.insertBefore(btn, inner.nextSibling);
+        } else {
+          wrapper.appendChild(btn);
+        }
+      } else {
+        select.parentNode.appendChild(btn);
+      }
+      btn.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        choicesInstance.removeActiveItems();
+        // Exibe todos os posts
+        document.querySelectorAll('.tags-post-item').forEach(function(item) {
+          item.classList.remove('hidden');
+        });
+        // Atualiza o contador
+        var countEl = document.getElementById('tags-count');
+        if (countEl) {
+          var total = document.querySelectorAll('.tags-post-item').length;
+          countEl.textContent = `Mostrando todos os ${total} posts`;
+        }
+      });
+    }
+  }
+});
+</script>

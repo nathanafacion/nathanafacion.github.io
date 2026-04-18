@@ -65,12 +65,16 @@ permalink: /tags/
 
 {% assign sorted_tags = site.tags | sort %}
 
-<div class="tag-filter-bar" style="animation: fadeUp 0.5s ease 0.1s both;">
-  {% for tag in sorted_tags %}
-    <span class="tag-filter" data-tag="{{ tag[0] }}">{{ tag[0] }} <small style="opacity:0.7;">({{ tag[1].size }})</small></span>
-  {% endfor %}
-  <span id="tags-clear" style="display:none;">✕ Limpar filtros</span>
+
+<div class="choices-demo" style="max-width: 600px; margin: 1.5rem 0 2rem; animation: fadeUp 0.5s ease 0.1s both; position:relative; z-index:500;">
+  <label for="tag-select" style="font-size:0.95rem; color:var(--text-muted); margin-bottom:0.5rem; display:block;">Filtrar por tags:</label>
+  <select id="tag-select" class="js-choice" multiple>
+    {% for tag in sorted_tags %}
+      <option value="{{ tag[0] }}">{{ tag[0] }} ({{ tag[1].size }})</option>
+    {% endfor %}
+  </select>
 </div>
+{% include_relative public/choicesjs-setup.html %}
 
 <span id="tags-count" style="animation: fadeUp 0.5s ease 0.15s both;">Mostrando todos os {{ site.posts.size }} posts</span>
 
@@ -102,27 +106,30 @@ permalink: /tags/
   </li>
   {% endfor %}
 </ul>
-
 <script>
-(function() {
-  var activeTags = [];
-  var filters = document.querySelectorAll('.tag-filter');
+// Choices.js tag filter logic
+document.addEventListener('DOMContentLoaded', function() {
+  var select = document.getElementById('tag-select');
   var items = document.querySelectorAll('.tags-post-item');
   var countEl = document.getElementById('tags-count');
   var clearBtn = document.getElementById('tags-clear');
   var total = items.length;
+  window.choicesInstance = window.choicesInstance || null;
+
+  function getSelectedTags() {
+    return Array.from(select.selectedOptions).map(function(opt) { return opt.value; });
+  }
 
   function update() {
+    var selected = getSelectedTags();
     var visible = 0;
     items.forEach(function(item) {
-      if (activeTags.length === 0) {
+      if (selected.length === 0) {
         item.classList.remove('hidden');
         visible++;
       } else {
-        var postTags = (item.getAttribute('data-tags') || '').split('||');
-        var match = activeTags.some(function(t) {
-          return postTags.indexOf(t) !== -1;
-        });
+        var tags = item.getAttribute('data-tags').split('||');
+        var match = selected.every(function(tag) { return tags.includes(tag); });
         if (match) {
           item.classList.remove('hidden');
           visible++;
@@ -131,47 +138,62 @@ permalink: /tags/
         }
       }
     });
+    countEl.textContent = selected.length === 0
+      ? `Mostrando todos os ${total} posts`
+      : `Mostrando ${visible} post${visible === 1 ? '' : 's'} com as tags selecionadas`;
+    clearBtn.style.display = selected.length ? '' : 'none';
+  }
 
-    if (activeTags.length === 0) {
-      countEl.textContent = 'Mostrando todos os ' + total + ' posts';
-      clearBtn.style.display = 'none';
-    } else {
-      countEl.textContent = 'Mostrando ' + visible + ' de ' + total + ' posts';
-      clearBtn.style.display = 'inline-block';
+  // Inicializa Choices.js e guarda instância
+  if (select && !window.choicesInstance) {
+    window.choicesInstance = new Choices(select, {
+      removeItemButton: true,
+      placeholder: true,
+      placeholderValue: '',
+      searchPlaceholderValue: 'Buscar tag',
+      noResultsText: 'Nenhuma tag encontrada',
+      itemSelectText: '',
+      shouldSort: false
+    });
+    // Atualiza ao selecionar/desselecionar
+    select.addEventListener('change', update);
+
+
+  }
+
+
+  function limparChoicesInput() {
+    // Remove todos os itens visualmente do input do Choices.js
+    if (window.choicesInstance) {
+      window.choicesInstance.removeActiveItems();
     }
   }
 
-  filters.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var tag = this.getAttribute('data-tag');
-      var idx = activeTags.indexOf(tag);
-      if (idx === -1) {
-        activeTags.push(tag);
-        this.classList.add('active');
-      } else {
-        activeTags.splice(idx, 1);
-        this.classList.remove('active');
-      }
-      update();
-    });
-  });
+
+
+  // Observa mudanças na lista de tags selecionadas para esconder/mostrar placeholder
+  function setupChoicesPlaceholderObserver() {
+    var choicesList = document.querySelector('.choices__list--multiple');
+    if (choicesList && !choicesList._observerSet) {
+      var observer = new MutationObserver(atualizarPlaceholderChoices);
+      observer.observe(choicesList, { childList: true, subtree: false });
+      choicesList._observerSet = true;
+    }
+  }
+  // Setup observer após Choices.js inicializar
+  setTimeout(setupChoicesPlaceholderObserver, 100);
+
 
   clearBtn.addEventListener('click', function() {
-    activeTags = [];
-    filters.forEach(function(btn) { btn.classList.remove('active'); });
-    update();
+    if (window.choicesInstance) {
+      window.choicesInstance.removeActiveItems();
+    }
+    Array.from(select.options).forEach(function(opt) { opt.selected = false; });
+    limparChoicesInput();
+    update(); // Garante que todos os posts reapareçam
   });
 
-  // Check URL hash for pre-selected tag
-  var hash = window.location.hash.replace('#', '');
-  if (hash) {
-    filters.forEach(function(btn) {
-      if (btn.getAttribute('data-tag') === decodeURIComponent(hash)) {
-        activeTags.push(btn.getAttribute('data-tag'));
-        btn.classList.add('active');
-      }
-    });
-    if (activeTags.length > 0) update();
-  }
-})();
+
+  update();
+});
 </script>
