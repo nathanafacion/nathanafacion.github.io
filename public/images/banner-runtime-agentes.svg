@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a"/>
+      <stop offset="60%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff88"/>
+      <stop offset="100%" style="stop-color:#00ccff"/>
+    </linearGradient>
+    <linearGradient id="neon2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ccff"/>
+      <stop offset="100%" style="stop-color:#7b2ff7"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#1a2a3a" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- ============ CICLO PRINCIPAL (centro) ============ -->
+  <!-- Loop arrow background circle -->
+  <circle cx="600" cy="315" r="190" fill="none" stroke="#00ccff" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.25"/>
+  <circle cx="600" cy="315" r="155" fill="none" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 8" opacity="0.2"/>
+
+  <!-- Setas do ciclo: perceber → planejar → agir → avaliar → perceber -->
+  <!-- Top arrow (perceber → planejar) -->
+  <path d="M 530 145 Q 600 120 670 145" fill="none" stroke="url(#neon)" stroke-width="2.5" filter="url(#glow)"/>
+  <polygon points="668,140 676,152 660,150" fill="#00ccff" filter="url(#glow)"/>
+
+  <!-- Right arrow (planejar → agir) -->
+  <path d="M 775 250 Q 800 315 775 380" fill="none" stroke="url(#neon2)" stroke-width="2.5" filter="url(#glow)"/>
+  <polygon points="771,378 783,382 774,368" fill="#7b2ff7" filter="url(#glow)"/>
+
+  <!-- Bottom arrow (agir → avaliar) -->
+  <path d="M 670 485 Q 600 510 530 485" fill="none" stroke="url(#neon2)" stroke-width="2.5" filter="url(#glow)"/>
+  <polygon points="532,490 524,478 540,480" fill="#00ccff" filter="url(#glow)"/>
+
+  <!-- Left arrow (avaliar → perceber) -->
+  <path d="M 425 380 Q 400 315 425 250" fill="none" stroke="url(#neon)" stroke-width="2.5" filter="url(#glow)"/>
+  <polygon points="429,252 417,248 426,262" fill="#00ff88" filter="url(#glow)"/>
+
+  <!-- ============ BOXES DAS FASES ============ -->
+  <!-- PERCEBER -->
+  <rect x="490" y="100" width="220" height="68" rx="10" fill="#0d1f35" stroke="#00ff88" stroke-width="2" filter="url(#glow)"/>
+  <text x="600" y="128" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#00ff88" font-weight="bold" filter="url(#glow)">PERCEBER</text>
+  <text x="600" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#00aa55">perceber(estado)</text>
+  <text x="600" y="162" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a7a8a">monta contexto → LLM</text>
+
+  <!-- PLANEJAR -->
+  <rect x="740" y="218" width="220" height="68" rx="10" fill="#0d1f35" stroke="#00ccff" stroke-width="2" filter="url(#glow)"/>
+  <text x="850" y="246" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#00ccff" font-weight="bold" filter="url(#glow)">PLANEJAR</text>
+  <text x="850" y="266" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#007799">chamar_llm()</text>
+  <text x="850" y="280" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a7a8a">→ JSON estruturado</text>
+
+  <!-- AGIR -->
+  <rect x="490" y="462" width="220" height="68" rx="10" fill="#0d1f35" stroke="#7b2ff7" stroke-width="2" filter="url(#glow)"/>
+  <text x="600" y="490" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#9b4fff" font-weight="bold" filter="url(#glow)">AGIR</text>
+  <text x="600" y="510" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6622bb">executar(ferramenta)</text>
+  <text x="600" y="524" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a7a8a">circuit breaker + retry</text>
+
+  <!-- AVALIAR -->
+  <rect x="240" y="218" width="220" height="68" rx="10" fill="#0d1f35" stroke="#00ff88" stroke-width="2" filter="url(#glow)"/>
+  <text x="350" y="246" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#00ff88" font-weight="bold" filter="url(#glow)">AVALIAR</text>
+  <text x="350" y="266" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#00aa55">avaliar(plano, resultado)</text>
+  <text x="350" y="280" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a7a8a">qualidade: completa|parcial</text>
+
+  <!-- CIRCUIT BREAKER box (entre planejar e agir) -->
+  <rect x="740" y="370" width="220" height="52" rx="8" fill="#1a0a2e" stroke="#7b2ff7" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="850" y="392" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#7b2ff7" font-weight="bold">⚡ CIRCUIT BREAKER</text>
+  <text x="850" y="410" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a3a7a">valida resposta LLM</text>
+
+  <!-- Seta circuit breaker -->
+  <line x1="850" y1="286" x2="850" y2="370" stroke="#7b2ff7" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+  <polygon points="846,368 854,368 850,380" fill="#7b2ff7" opacity="0.7"/>
+
+  <!-- ============ MÓDULOS LATERAIS ============ -->
+  <!-- contratos.py - canto superior esquerdo -->
+  <rect x="30" y="30" width="180" height="90" rx="8" fill="#0a1520" stroke="#00ff88" stroke-width="1.5" opacity="0.9"/>
+  <text x="120" y="52" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#00ff88" font-weight="bold">contratos.py</text>
+  <text x="120" y="70" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">carregar_yaml_do_md()</text>
+  <text x="120" y="85" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">carregar_contratos()</text>
+  <text x="120" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">criar_estado()</text>
+  <line x1="210" y1="75" x2="490" y2="134" stroke="#00ff88" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
+  <!-- telemetria.py - canto superior direito -->
+  <rect x="990" y="30" width="180" height="90" rx="8" fill="#0a1520" stroke="#00ccff" stroke-width="1.5" opacity="0.9"/>
+  <text x="1080" y="52" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#00ccff" font-weight="bold">telemetria.py</text>
+  <text x="1080" y="70" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">telemetry_stream</text>
+  <text x="1080" y="85" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">audit_logs</text>
+  <text x="1080" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">health_metrics</text>
+  <line x1="990" y1="75" x2="710" y2="134" stroke="#00ccff" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
+  <!-- ferramentas.py - meio esquerdo -->
+  <rect x="30" y="260" width="180" height="90" rx="8" fill="#0a1520" stroke="#9b4fff" stroke-width="1.5" opacity="0.9"/>
+  <text x="120" y="282" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#9b4fff" font-weight="bold">ferramentas.py</text>
+  <text x="120" y="300" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">construir_ferramenta()</text>
+  <text x="120" y="315" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">construir_tools_do</text>
+  <text x="120" y="330" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">_contratos()</text>
+  <text x="120" y="345" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">montar_args_mock()</text>
+  <line x1="210" y1="305" x2="240" y2="280" stroke="#9b4fff" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
+  <!-- validador.py - meio direito -->
+  <rect x="990" y="260" width="180" height="90" rx="8" fill="#0a1520" stroke="#00ccff" stroke-width="1.5" opacity="0.9"/>
+  <text x="1080" y="282" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#00ccff" font-weight="bold">validador.py</text>
+  <text x="1080" y="300" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">verifica 9 arquivos</text>
+  <text x="1080" y="315" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">skills ↔ toolbox</text>
+  <text x="1080" y="330" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">obrigatórias OK?</text>
+  <text x="1080" y="345" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a7a9a">tipo válido?</text>
+  <line x1="990" y1="305" x2="960" y2="280" stroke="#00ccff" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
+  <!-- executor.py - canto inferior direito -->
+  <rect x="990" y="490" width="180" height="110" rx="8" fill="#0a1520" stroke="#9b4fff" stroke-width="1.5" opacity="0.9"/>
+  <text x="1080" y="512" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#9b4fff" font-weight="bold">executor.py</text>
+  <text x="1080" y="530" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">executar_gancho()</text>
+  <text x="1080" y="545" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">validar_payload()</text>
+  <text x="1080" y="560" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">executar() + retry</text>
+  <text x="1080" y="575" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">avaliar()</text>
+  <text x="1080" y="590" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#6a4a9a">validar_saida()</text>
+  <line x1="990" y1="545" x2="710" y2="510" stroke="#9b4fff" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
+  <!-- main.py / CLI - canto inferior esquerdo -->
+  <rect x="30" y="490" width="180" height="110" rx="8" fill="#0a1520" stroke="#00ff88" stroke-width="1.5" opacity="0.9"/>
+  <text x="120" y="512" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#00ff88" font-weight="bold">main.py  CLI</text>
+  <text x="120" y="530" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">rodar</text>
+  <text x="120" y="545" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">validar</text>
+  <text x="120" y="560" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">rastreamento</text>
+  <text x="120" y="575" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">replay</text>
+  <text x="120" y="590" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#4a9a6a">analisar</text>
+  <line x1="210" y1="545" x2="490" y2="510" stroke="#00ff88" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
+  <!-- ============ TÍTULO CENTRAL ============ -->
+  <text x="600" y="310" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#00ff88" opacity="0.7" filter="url(#glow)">ciclo.py</text>
+  <text x="600" y="328" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#4a7a8a">rodar()</text>
+
+  <!-- ============ TÍTULO PRINCIPAL ============ -->
+  <text x="600" y="590" text-anchor="middle" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="url(#neon)" filter="url(#glow-strong)">Por Dentro do Runtime</text>
+  <text x="600" y="618" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#4a8a9a">como um agente autônomo realmente funciona</text>
+
+  <!-- trace_id decorativo -->
+  <text x="30" y="618" font-family="'Courier New', monospace" font-size="9" fill="#1a4a4a" opacity="0.8">trace_id: a4f2c1e9b3d0</text>
+  <text x="1170" y="618" text-anchor="end" font-family="'Courier New', monospace" font-size="9" fill="#1a4a4a" opacity="0.8">nathanafacion.github.io</text>
+
+  <!-- Pequenos pontos de circuito decorativos -->
+  <circle cx="600" cy="315" r="6" fill="#00ff88" filter="url(#glow-strong)" opacity="0.6"/>
+  <circle cx="490" cy="134" r="3" fill="#00ff88" opacity="0.5"/>
+  <circle cx="710" cy="134" r="3" fill="#00ccff" opacity="0.5"/>
+  <circle cx="240" cy="252" r="3" fill="#00ff88" opacity="0.5"/>
+  <circle cx="460" cy="252" r="3" fill="#00ff88" opacity="0.5"/>
+  <circle cx="740" cy="252" r="3" fill="#00ccff" opacity="0.5"/>
+  <circle cx="960" cy="252" r="3" fill="#00ccff" opacity="0.5"/>
+  <circle cx="490" cy="496" r="3" fill="#9b4fff" opacity="0.5"/>
+  <circle cx="710" cy="496" r="3" fill="#9b4fff" opacity="0.5"/>
+</svg>
