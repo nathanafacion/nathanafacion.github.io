@@ -3,7 +3,7 @@ layout: post
 title: "Arquiteturas Modernas de Agentes de IA Baseados em LLMs"
 date: 2026-05-16 12:00:00 +0000
 categories: agentes-ia arquiteturas llms
-image: /public/images/banner-arquiteturas-agentes-ia.png
+image: /public/images/arquiteturas-agentes-ia.png
 ---
 
 ## Arquiteturas Modernas de Agentes de IA Baseados em LLMs
