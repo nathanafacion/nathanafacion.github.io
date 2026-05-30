@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#13111c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="50%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="mem0grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="langfusegrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="bridgegrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa" stop-opacity="0.8"/>
+      <stop offset="50%" style="stop-color:#c4b5fd" stop-opacity="1"/>
+      <stop offset="100%" style="stop-color:#818cf8" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="65"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Glow orbs -->
+  <circle cx="220" cy="200" r="230" fill="#a78bfa" opacity="0.06" filter="url(#blur1)"/>
+  <circle cx="980" cy="430" r="200" fill="#6366f1" opacity="0.07" filter="url(#blur1)"/>
+  <circle cx="600" cy="315" r="160" fill="#818cf8" opacity="0.04" filter="url(#blur2)"/>
+
+  <!-- Dotted grid -->
+  <g fill="#2a2a3a" opacity="0.35">
+    <circle cx="100" cy="80" r="1.5"/><circle cx="200" cy="80" r="1.5"/><circle cx="300" cy="80" r="1.5"/><circle cx="400" cy="80" r="1.5"/><circle cx="500" cy="80" r="1.5"/><circle cx="600" cy="80" r="1.5"/><circle cx="700" cy="80" r="1.5"/><circle cx="800" cy="80" r="1.5"/><circle cx="900" cy="80" r="1.5"/><circle cx="1000" cy="80" r="1.5"/><circle cx="1100" cy="80" r="1.5"/>
+    <circle cx="100" cy="180" r="1.5"/><circle cx="200" cy="180" r="1.5"/><circle cx="300" cy="180" r="1.5"/><circle cx="400" cy="180" r="1.5"/><circle cx="500" cy="180" r="1.5"/><circle cx="600" cy="180" r="1.5"/><circle cx="700" cy="180" r="1.5"/><circle cx="800" cy="180" r="1.5"/><circle cx="900" cy="180" r="1.5"/><circle cx="1000" cy="180" r="1.5"/><circle cx="1100" cy="180" r="1.5"/>
+    <circle cx="100" cy="280" r="1.5"/><circle cx="200" cy="280" r="1.5"/><circle cx="300" cy="280" r="1.5"/><circle cx="400" cy="280" r="1.5"/><circle cx="500" cy="280" r="1.5"/><circle cx="600" cy="280" r="1.5"/><circle cx="700" cy="280" r="1.5"/><circle cx="800" cy="280" r="1.5"/><circle cx="900" cy="280" r="1.5"/><circle cx="1000" cy="280" r="1.5"/><circle cx="1100" cy="280" r="1.5"/>
+    <circle cx="100" cy="380" r="1.5"/><circle cx="200" cy="380" r="1.5"/><circle cx="300" cy="380" r="1.5"/><circle cx="400" cy="380" r="1.5"/><circle cx="500" cy="380" r="1.5"/><circle cx="600" cy="380" r="1.5"/><circle cx="700" cy="380" r="1.5"/><circle cx="800" cy="380" r="1.5"/><circle cx="900" cy="380" r="1.5"/><circle cx="1000" cy="380" r="1.5"/><circle cx="1100" cy="380" r="1.5"/>
+    <circle cx="100" cy="480" r="1.5"/><circle cx="200" cy="480" r="1.5"/><circle cx="300" cy="480" r="1.5"/><circle cx="400" cy="480" r="1.5"/><circle cx="500" cy="480" r="1.5"/><circle cx="600" cy="480" r="1.5"/><circle cx="700" cy="480" r="1.5"/><circle cx="800" cy="480" r="1.5"/><circle cx="900" cy="480" r="1.5"/><circle cx="1000" cy="480" r="1.5"/><circle cx="1100" cy="480" r="1.5"/>
+    <circle cx="100" cy="570" r="1.5"/><circle cx="200" cy="570" r="1.5"/><circle cx="300" cy="570" r="1.5"/><circle cx="400" cy="570" r="1.5"/><circle cx="500" cy="570" r="1.5"/><circle cx="600" cy="570" r="1.5"/><circle cx="700" cy="570" r="1.5"/><circle cx="800" cy="570" r="1.5"/><circle cx="900" cy="570" r="1.5"/><circle cx="1000" cy="570" r="1.5"/><circle cx="1100" cy="570" r="1.5"/>
+  </g>
+
+  <!-- ======== VISUAL TEMÁTICO: mem0 (esquerda) — bridge — langfuse (direita) ======== -->
+
+  <!-- mem0 card -->
+  <rect x="72" y="310" width="310" height="200" rx="14" fill="rgba(167,139,250,0.07)" stroke="rgba(167,139,250,0.35)" stroke-width="1.5"/>
+
+  <!-- mem0: ícone de "grafo de memória" — nós conectados representando memórias -->
+  <!-- Nó central -->
+  <circle cx="227" cy="358" r="18" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" stroke-width="2" filter="url(#softglow)"/>
+  <circle cx="227" cy="358" r="8" fill="#a78bfa" opacity="0.9"/>
+  <!-- Nós satélite -->
+  <circle cx="175" cy="328" r="11" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="175" cy="328" r="5" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="280" cy="325" r="11" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="280" cy="325" r="5" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="160" cy="388" r="9" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="160" cy="388" r="4" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="292" cy="385" r="9" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="292" cy="385" r="4" fill="#a78bfa" opacity="0.7"/>
+  <!-- Arestas do grafo -->
+  <line x1="227" y1="358" x2="175" y2="328" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <line x1="227" y1="358" x2="280" y2="325" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <line x1="227" y1="358" x2="160" y2="388" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <line x1="227" y1="358" x2="292" y2="385" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <line x1="175" y1="328" x2="160" y2="388" stroke="#a78bfa" stroke-width="1" opacity="0.3"/>
+  <line x1="280" y1="325" x2="292" y2="385" stroke="#a78bfa" stroke-width="1" opacity="0.3"/>
+
+  <!-- mem0 label -->
+  <text x="227" y="418" text-anchor="middle" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#a78bfa" filter="url(#softglow)">mem0</text>
+  <text x="227" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#8888a0">memória persistente</text>
+  <text x="227" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6666806">vector store · grafo</text>
+  <!-- mem0 pill -->
+  <rect x="157" y="472" width="140" height="22" rx="11" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.35)" stroke-width="1"/>
+  <text x="227" y="487" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" font-weight="500">estado do agente</text>
+
+  <!-- Bridge / seta de conexão centralizada -->
+  <!-- Linha tracejada de conexão -->
+  <line x1="390" y1="410" x2="530" y2="410" stroke="url(#bridgegrad)" stroke-width="2" stroke-dasharray="8 5" opacity="0.7"/>
+  <polygon points="530,404 542,410 530,416" fill="#c4b5fd" opacity="0.9" filter="url(#softglow)"/>
+  <line x1="672" y1="410" x2="812" y2="410" stroke="url(#bridgegrad)" stroke-width="2" stroke-dasharray="8 5" opacity="0.7"/>
+  <polygon points="812,404 824,410 812,416" fill="#818cf8" opacity="0.9" filter="url(#softglow)"/>
+  <!-- Ícone central de sync -->
+  <circle cx="600" cy="410" r="28" fill="rgba(129,140,248,0.1)" stroke="rgba(129,140,248,0.4)" stroke-width="1.5"/>
+  <text x="600" y="416" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#c4b5fd">⟲</text>
+
+  <!-- langfuse card -->
+  <rect x="818" y="310" width="310" height="200" rx="14" fill="rgba(99,102,241,0.07)" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
+
+  <!-- Langfuse: ícone de trace / observabilidade — linhas de telemetria -->
+  <!-- Eixo base do gráfico de trace -->
+  <line x1="870" y1="400" x2="1100" y2="400" stroke="#6366f1" stroke-width="1" opacity="0.4"/>
+  <!-- Spans aninhados representando traces -->
+  <!-- Trace raiz -->
+  <rect x="875" y="325" width="220" height="16" rx="4" fill="rgba(99,102,241,0.25)" stroke="#6366f1" stroke-width="1.2"/>
+  <text x="881" y="337" font-family="Fira Code, monospace" font-size="9" fill="#818cf8">pipeline-agente</text>
+  <!-- Span nível 1 -->
+  <rect x="890" y="347" width="155" height="13" rx="3" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="1"/>
+  <text x="896" y="357" font-family="Fira Code, monospace" font-size="8" fill="#a5b4fc">recuperar-memoria</text>
+  <!-- Span nível 1 -->
+  <rect x="890" y="366" width="195" height="13" rx="3" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="1"/>
+  <text x="896" y="376" font-family="Fira Code, monospace" font-size="8" fill="#a5b4fc">gerar-resposta-llm</text>
+  <!-- Span nível 2 -->
+  <rect x="905" y="385" width="140" height="11" rx="3" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="0.8"/>
+  <text x="910" y="394" font-family="Fira Code, monospace" font-size="8" fill="#c4b5fd">openai.chat.complete</text>
+
+  <!-- langfuse label -->
+  <text x="973" y="418" text-anchor="middle" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#818cf8" filter="url(#softglow)">langfuse</text>
+  <text x="973" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#8888a0">observabilidade LLM</text>
+  <!-- langfuse pill -->
+  <rect x="898" y="472" width="150" height="22" rx="11" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.35)" stroke-width="1"/>
+  <text x="973" y="487" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#818cf8" font-weight="500">traces · spans · scores</text>
+
+  <!-- ======== TEXTO PRINCIPAL ======== -->
+  <!-- Eyebrow label -->
+  <text x="80" y="92" font-family="Inter, sans-serif" font-size="16" fill="#8888a0" font-weight="500" letter-spacing="0.1em">FERRAMENTAS ESSENCIAIS PARA AGENTES DE IA</text>
+
+  <!-- Título linha 1 -->
+  <text x="80" y="152" font-family="Inter, sans-serif" font-size="52" font-weight="800" letter-spacing="-0.02em">
+    <tspan fill="#a78bfa">mem0</tspan><tspan fill="#6666806"> + </tspan><tspan fill="#818cf8">Langfuse</tspan>
+  </text>
+
+  <!-- Título linha 2 -->
+  <text x="80" y="215" font-family="Inter, sans-serif" font-size="26" font-weight="600" fill="#e4e4ed" letter-spacing="-0.01em">Memória Persistente &amp; Observabilidade</text>
+
+  <!-- Subtítulo -->
+  <text x="80" y="258" font-family="Inter, sans-serif" font-size="16" fill="#8888a0" font-weight="400">Duas ferramentas que transformam agentes experimentais em sistemas auditáveis</text>
+
+  <!-- Separator line -->
+  <line x1="80" y1="282" x2="680" y2="282" stroke="url(#accent)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Tags -->
+  <g>
+    <rect x="80" y="295" rx="12" ry="12" width="76" height="25" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="118" y="312" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">#mem0</text>
+    <rect x="164" y="295" rx="12" ry="12" width="90" height="25" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="209" y="312" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">#langfuse</text>
+    <rect x="262" y="295" rx="12" ry="12" width="80" height="25" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="302" y="312" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">#agentes</text>
+    <rect x="350" y="295" rx="12" ry="12" width="52" height="25" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="376" y="312" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">#llm</text>
+    <rect x="410" y="295" rx="12" ry="12" width="80" height="25" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+    <text x="450" y="312" font-family="Inter, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">#python</text>
+  </g>
+
+  <!-- Author -->
+  <text x="80" y="576" font-family="Inter, sans-serif" font-size="15" fill="#8888a0">por <tspan fill="#a78bfa" font-weight="600">Nathana Facion</tspan></text>
+
+  <!-- Border -->
+  <rect x="2" y="2" width="1196" height="626" rx="12" ry="12" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+</svg>
